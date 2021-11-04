@@ -1,0 +1,47 @@
+<form class="example-form">
+  <h1>Entity Extraction</h1>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Textarea</mat-label>
+    <textarea matInput id="textArea"></textarea>
+  </mat-form-field>
+  <br>
+
+  Min_confidence:
+  <mat-slider [(ngModel)]="sliderModel" name="slider" min="0" max="1" step="0.1"></mat-slider> {{sliderModel}}
+  <br>
+  <br>
+
+  Include:<br>
+  <section class="example-section">
+    <input [(ngModel)]="checkImage" id="image" type="checkbox" name="checkImage"/>image
+    <input [(ngModel)]="checkAbstract" id="abstract" type="checkbox" name="checkAbstract"/>abstract
+    <input [(ngModel)]="checkCategories" id="categories" type="checkbox" name="checkCategories"/>categories
+  </section>
+
+  <br>
+  <button mat-raised-button color="warn" (click)="apiRequest()">Submit</button>
+</form>
+
+<br>
+
+<div *ngIf="print">
+  <li *ngFor="let annotation of annotations">
+    <p><b>Spot:</b> {{annotation.spot}}
+      <br>
+      <span *ngIf="checkCategories">
+        <b>Categories:</b> {{annotation.categories}}
+        <br>
+      </span>
+      <span *ngIf="checkAbstract">
+        <b>Abstract:</b> {{annotation.abstract}}
+        <br>
+      </span>
+      <span *ngIf="checkImage">
+        <img src = "{{annotation.image.thumbnail}}">
+        <br><br>
+      </span>
+    </p>
+  </li>
+</div>
+

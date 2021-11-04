@@ -1,0 +1,23 @@
+<form class="example-form">
+  <h1>Text Similarity</h1>
+  <h3>Enter text:</h3>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Text 1</mat-label>
+    <textarea matInput id="textArea"></textarea>
+  </mat-form-field>
+  <br>
+
+  <section class="example-section">
+    <input id="clean" type="checkbox"/>Clean
+  </section>
+  <br>
+  <button mat-raised-button color="warn" (click)="apiRequest()">Submit</button>
+</form>
+
+<div *ngIf = "print">
+  <li *ngFor="let detectedLang of languages.detectedLanguages">
+    <p><b>Detected language:</b> {{detectedLang.lang}}</p>
+    <p><b>Confidence:</b> {{detectedLang.confidence}}</p>
+  </li>
+</div>
