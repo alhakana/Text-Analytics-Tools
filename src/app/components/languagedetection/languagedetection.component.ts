@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {LogService} from "../log.service";
-import {Languages} from "../model";
+import {LogService} from "../../log.service";
+import {Languages} from "../../model";
+import {LanguageDetectionService} from "../../services/language-detection-service/language-detection.service";
 
 @Component({
   selector: 'app-languagedetection',
@@ -15,7 +16,8 @@ export class LanguagedetectionComponent implements OnInit {
 
   constructor(
     private httpClient: HttpClient,
-    private logService: LogService
+    private logService: LogService,
+    private languageDetectionService: LanguageDetectionService
   ) {
     this.languages = new Languages("0",0,"0","0",[]);
   }
@@ -27,19 +29,9 @@ export class LanguagedetectionComponent implements OnInit {
     let element = <HTMLInputElement> document.getElementById("clean");
     let isClean = element.checked;
 
-    console.log("Clean: " + isClean)
-
-    let request = "https://api.dandelion.eu/datatxt/li/v1/?text=" + text;
-    request += '&clean=' + isClean + '&token=' + localStorage.getItem("token")
-
-    this.httpClient.get<any>(request).subscribe(response => {
-        console.log("response: " + response)
-
+    this.languageDetectionService.detectLanguage(text, isClean).subscribe((response) => {
         this.languages = response
         this.print = true
-
-        let log = '[' + response.timestamp + ']' + " | GET " + request;
-        this.logService.addToList(log)
       }
     )
 

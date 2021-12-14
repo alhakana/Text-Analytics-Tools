@@ -1,0 +1,24 @@
+<form class="example-form">
+  <h1>Text Similarity</h1>
+
+  <h3>Enter the first text:</h3>
+  <mat-form-field appearance="fill" style="width: 300px;">
+    <mat-label>Text 1</mat-label>
+    <textarea matInput rows="10" cols="30" placeholder="text" id="textArea1"></textarea>
+  </mat-form-field><br>
+
+  <h3>Enter the second text:</h3>
+  <mat-form-field appearance="fill" style="width: 300px;">
+    <mat-label>Text 2</mat-label>
+    <textarea matInput rows="10" cols="30" id="textArea2"></textarea>
+  </mat-form-field>
+
+  <br>
+  <button mat-raised-button color="warn" (click)="apiZahtev($event)">Submit</button>
+</form>
+
+<br>
+
+<div *ngIf = "print">
+  <p><b>Semantic similarity:</b> {{similarity.similarity*100}}%</p>
+</div>

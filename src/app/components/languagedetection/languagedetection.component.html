@@ -1,0 +1,26 @@
+<form class="example-form">
+  <h1>Language detection</h1>
+  <h3>Enter text:</h3>
+
+  <mat-form-field appearance="fill" style="width: 300px;">
+    <mat-label>Text</mat-label>
+    <textarea matInput rows="10" cols="50" id="textArea"></textarea>
+  </mat-form-field>
+  <br>
+
+  <section class="example-section">
+    <input id="clean" type="checkbox"/>Clean
+  </section>
+  <br>
+  <button mat-raised-button color="warn" (click)="apiRequest()">Submit</button>
+</form>
+
+<div *ngIf = "print">
+  <li *ngFor="let detectedLang of languages.detectedLangs">
+    <p><b>Detected language:</b> {{detectedLang.lang}}
+    <br>
+    <b>Confidence:</b> {{detectedLang.confidence}}</p>
+    <br>
+    <br>
+  </li>
+</div>

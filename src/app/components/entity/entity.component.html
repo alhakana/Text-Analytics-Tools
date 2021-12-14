@@ -1,0 +1,45 @@
+<form class="example-form" xmlns="http://www.w3.org/1999/html">
+  <h1>Entity Extraction</h1>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Textarea</mat-label>
+    <textarea #textArea rows="10" matInput (input)="changeText(textArea.value)"></textarea>
+  </mat-form-field>
+  <br>
+
+  Min_confidence:
+  <mat-slider [(ngModel)]="sliderModel" name="slider" min="0" max="1" step="0.1" (change)="apiRequest()"></mat-slider> {{sliderModel}}
+  <br>
+  <br>
+
+  Include:<br>
+  <section class="example-section">
+    <input #checkBoxImage id="checkImage" name="checkImage" type="checkbox" [checked]="checkImage" (change)="onChangedImage(checkBoxImage.checked)"/>image
+    <input #checkBoxAbstract id="abstract" type="checkbox" name="checkAbstract" [checked]="checkAbstract" (change)="onChangedAbstract(checkBoxAbstract.checked)"/>abstract
+    <input #checkBoxCategories id="categories" type="checkbox" name="checkCategories" [checked]="checkCategories" (change)="onChangedCategories(checkBoxCategories.checked)"/>categories
+  </section>
+
+</form>
+
+<br>
+
+<div *ngIf="print">
+  <li *ngFor="let annotation of annotations">
+    <p><b>Spot:</b> {{annotation.spot}}
+      <br>
+      <span *ngIf="checkCategories">
+        <b>Categories:</b> {{annotation.categories}}
+        <br>
+      </span>
+      <span *ngIf="checkAbstract">
+        <b>Abstract:</b> {{annotation.abstract}}
+        <br>
+      </span>
+      <span *ngIf="checkImage">
+        <img src = "{{annotation.image.thumbnail}}">
+        <br><br>
+      </span>
+    </p>
+  </li>
+</div>
+
