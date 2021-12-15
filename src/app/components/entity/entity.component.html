@@ -1,14 +1,14 @@
 <form class="example-form" xmlns="http://www.w3.org/1999/html">
   <h1>Entity Extraction</h1>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" style="width: 300px;">
     <mat-label>Textarea</mat-label>
-    <textarea #textArea rows="10" matInput (input)="changeText(textArea.value)"></textarea>
+    <textarea #textArea rows="10" cols="50" matInput (input)="changeText(textArea.value)"></textarea>
   </mat-form-field>
   <br>
 
-  Min_confidence:
-  <mat-slider [(ngModel)]="sliderModel" name="slider" min="0" max="1" step="0.1" (change)="apiRequest()"></mat-slider> {{sliderModel}}
+  <p class="h">Minimum confidence</p>
+  <mat-slider [(ngModel)]="sliderModel" name="slider" min="0" max="1" step="0.1" style="width: 300px;" (change)="apiRequest()"></mat-slider> {{sliderModel}}
   <br>
   <br>
 

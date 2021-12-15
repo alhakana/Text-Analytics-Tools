@@ -1,6 +1,6 @@
+<div class="div">
 <form class="example-form">
-  <h1>Sentiment Analysis</h1>
-  <h3>Enter text:</h3>
+  <h1 class="h">Sentiment Analysis</h1>
 
   <mat-form-field appearance="fill" style="width: 300px;">
     <mat-label>Text</mat-label>
@@ -26,14 +26,18 @@
     <label class="form-check-label" for="primaryLanguageAuto">
       Auto
     </label>
-  </div>
+    <br>
 
+  </div>
+  <br>
+  <br>
+  <button class="button" mat-raised-button color="warn" (click)="apiRequest()">Submit</button>
   <br><br>
 
-  <button mat-raised-button color="warn" (click)="apiRequest()">Submit</button>
 </form><br>
 
 <div *ngIf = "print" >
   <p><b>Score:</b> {{sentimentValue.score}}</p>
   <p style.background-color={{colorRGB}}><b>Type:</b> {{sentimentValue.type}}</p>
+</div>
 </div>

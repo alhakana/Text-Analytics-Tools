@@ -3,7 +3,8 @@
   padding-left: 25px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 .example-section {
   margin: 12px 0;

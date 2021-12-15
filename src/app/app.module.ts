@@ -13,7 +13,6 @@ import { MatSliderModule } from '@angular/material/slider';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { EntityComponent } from './components/entity/entity.component';
 import { TextsimilarityComponent } from './components/textsimilarity/textsimilarity.component';
 import { LanguagedetectionComponent } from './components/languagedetection/languagedetection.component';
@@ -26,7 +25,6 @@ import { LogsComponent } from './components/logs/logs.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     EntityComponent,
     TextsimilarityComponent,
     LanguagedetectionComponent,

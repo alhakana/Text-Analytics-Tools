@@ -1,5 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { background-color: lightgray;height: 100%; }
+
+.h {
+  text-align: center;
+  margin: 12px 0;
+  padding: 10px;
+}
+
+.example-form {
+  margin: 12px 0;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
+.div {
+  margin: 12px 0;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+

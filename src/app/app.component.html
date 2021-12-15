@@ -1,2 +1,22 @@
-<app-navbar></app-navbar>
+
+
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <span><mat-icon>language</mat-icon></span>
+  <div class="spacer"></div>
+  <a mat-button routerLink="/entity">Entity Extraction</a>
+  <div class="spacer"></div>
+  <a mat-button routerLink="/textsimilarity">Text Similarity</a>
+  <div class="spacer"></div>
+  <a mat-button routerLink="/languagedetection">Language detection</a>
+  <div class="spacer"></div>
+  <a mat-button routerLink="/sentiment">Sentiment analysis</a>
+  <div class="spacer"></div>
+  <a mat-button routerLink="/logs">Logs</a>
+
+  <div class="spacer"></div>
+
+  <a mat-raised-button color="warn" routerLink="tokenpage">Token</a>
+
+</mat-toolbar>
+
 <router-outlet></router-outlet>

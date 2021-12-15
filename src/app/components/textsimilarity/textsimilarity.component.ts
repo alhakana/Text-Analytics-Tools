@@ -26,7 +26,7 @@ export class TextsimilarityComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  apiZahtev(event: Event): void{
+  apiRequest(event: Event): void{
     let text1 = (<HTMLInputElement>document.getElementById("textArea1")).value;
     let text2 = (<HTMLInputElement>document.getElementById("textArea2")).value;
 
